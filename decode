@@ -1,0 +1,2 @@
+#!/bin/bash
+curl -s https://tap-api-v2.proofpoint.com/v2/url/decode -H 'Content-Type: application/json' -d '{ "urls": [ "'"$1"'" ] }' | jq --raw-output '.urls.[] | .decodedUrl'
